@@ -1,0 +1,257 @@
+ *,
+ *::before,
+ *::after {
+     box-sizing: border-box;
+ }
+
+ body,
+ h1,
+ a,
+ ul,
+ li,
+ p {
+     margin: 0;
+     padding: 0;
+ }
+
+ ul {
+     list-style: none;
+ }
+
+
+ a {
+     text-decoration: none;
+ }
+
+ input {
+     font: inherit;
+ }
+
+ /* ------------------------END RESET------------------------------- */
+
+ :root {
+     --base-background-color: #121725;
+     --secondary-background-color: #2C344B;
+     --overlay-color: #54E6AF;
+     --text-color: #C2CBE5;
+     --submit-hover: #B3FFE2;
+ }
+
+ .sr-only {
+     clip: rect(1px, 1px, 1px, 1px);
+     clip-path: inset(50%);
+     height: 1px;
+     width: 1px;
+     margin: -1px;
+     overflow: hidden;
+     padding: 0;
+     position: absolute;
+ }
+
+ body {
+     font-family: 'Chivo', sans-serif;
+     color: var(--text-color);
+     text-align: center;
+     background-color: var(--base-background-color);
+ }
+
+ .base-container::before {
+     content: "";
+     position: absolute;
+     inset: 0 0 0 0;
+     background-image: url("../images/mobile/image-host.jpg");
+     background-repeat: no-repeat;
+     background-position: center top;
+     opacity: .1;
+     z-index: -1;
+ }
+
+ .base-container {
+     position: relative;
+ }
+
+ .container {
+     padding-left: 1.25rem;
+     padding-right: 1.25rem;
+ }
+
+ .logo img {
+     padding-top: 64px;
+ }
+
+ h1 {
+     font-weight: 300;
+     color: var(--overlay-color);
+     margin-top: 48px;
+     font-size: 1.625rem;
+     text-transform: uppercase;
+     line-height: 1.45;
+ }
+
+ h1 span {
+     color: white;
+ }
+
+ .podcasts {
+     padding-bottom: 32px;
+ }
+
+ .podcast-text {
+     font-size: .9375;
+     line-height: 1.65;
+     padding-top: 24px;
+     padding-bottom: 32px;
+ }
+
+ .podcasts ul img {
+     width: 75%;
+ }
+
+ .podcasts ul {
+     display: flex;
+     flex-flow: row;
+     justify-content: space-between;
+ }
+
+ form input {
+     width: 100%;
+     display: block;
+     font-size: .875;
+     font-weight: 700;
+     margin-top: 1rem;
+     padding-top: 1rem;
+     padding-bottom: 1rem;
+     border-radius: 2rem;
+     border: none;
+ }
+
+ .hidden {
+     display: none;
+ }
+
+ .form-input {
+     color: #C2CBE5;
+     background-color: var(--secondary-background-color);
+     padding-left: 2rem;
+     margin-bottom: 16px;
+ }
+
+ .form-submit {
+     background-color: var(--overlay-color);
+ }
+
+ .form-submit:hover {
+     background-color: var(--submit-hover);
+ }
+
+ /* =============================MEDIA-START-Tablet=============================== */
+ @media screen and (min-width: 40.625rem) {
+     .base-container::before {
+         background-image: url("../images/tablet/image-host.jpg");
+         background-position: top right;
+         opacity: 1;
+     }
+
+     .base-container::after {
+         content: "";
+         background-image: url("../images/bg-pattern-dots.svg");
+         background-repeat: no-repeat;
+         width: 232px;
+         height: 104px;
+         left: 1.5rem;
+         bottom: -4rem;
+         position: absolute;
+         z-index: -1;
+     }
+
+     .base-container {
+         text-align: start;
+         padding-left: 1.5rem;
+         padding-right: 0;
+         padding-bottom: 160px;
+
+     }
+
+     h1 {
+         padding-top: 96px;
+         font-size: 3rem;
+         line-height: 1.16;
+         margin: 0;
+     }
+
+     .container {
+         display: flex;
+         max-width: 40.625rem;
+         margin-right: 0;
+         background-color: var(--base-background-color);
+         margin-top: 128px;
+         flex-direction: column;
+         padding: 0;
+     }
+
+     .podcast-text {
+         padding-top: 32px;
+         max-width: 64%;
+         order: 1;
+     }
+
+     form {
+         position: relative;
+         max-width: 64%;
+         order: 2;
+         margin-bottom: 48px;
+     }
+
+     .form-submit {
+         position: absolute;
+         top: .5rem;
+         right: .5rem;
+         display: inline;
+         padding-top: .5rem;
+         padding-bottom: .5rem;
+         width: 40%;
+     }
+
+     .podcasts {
+         order: 3;
+         padding-bottom: 0;
+     }
+
+     .podcasts ul img {
+         width: 100%;
+     }
+
+     .podcasts ul {
+         padding-right: 2rem;
+     }
+ }
+
+ /* =============================MEDIA-START-Desktop=============================== */
+ @media screen and (min-width: 73.5rem) {
+     .base-container::before {
+         background-image: url("../images/desktop/image-host.jpg");
+         background-position: top 86px right;
+     }
+
+     .base-container {
+         max-width: 120rem;
+         margin-left: 5rem;
+     }
+
+     .container {
+         max-width: 45.625rem;
+         margin-top: 80px;
+     }
+
+     h1 {
+         font-size: 3.25rem;
+         line-height: 1.2;
+     }
+
+     .base-container::after {
+         content: "";
+         left: auto;
+         right: 1rem;
+         bottom: 7rem;
+     }
+ }
